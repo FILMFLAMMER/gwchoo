@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>전문촬영 &amp; 조명기술 워크숍 | 2026 강원 콘텐츠 제작기술 집중 실습과정</title>
+<meta name="description" content="2026. 7. 17(금)–7. 19(일) 강원대학교 서암관 DMC | 전문촬영 &amp; 조명기술 워크숍 with 추경엽 촬영·조명 감독">
+<meta property="og:title" content="전문촬영 &amp; 조명기술 워크숍 — 썸머 필름을 타고!">
+<meta property="og:description" content="2026. 7. 17(금)–7. 19(일) 강원대학교 서암관 DMC | 2박 3일 촬영·조명 집중 실습">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root{
+    --blue-deep:#1E56D6;
+    --blue-main:#2E6FE8;
+    --blue-mid:#3D8BEA;
+    --cyan:#56C3DF;
+    --navy:#121A2E;
+    --gold:#F5B93C;
+    --white:#FFFFFF;
+    --ink:#12325E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#101726;}
+  body{
+    font-family:"Pretendard Variable",Pretendard,"Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+    -webkit-text-size-adjust:100%;
+  }
+
+  /* ===== 스케일 스테이지: 모바일에서도 A4 리플렛 형태 그대로 축소 표시 ===== */
+  .stage{
+    width:100%;
+    display:flex;justify-content:center;
+    padding:16px 0 28px;
+    overflow:hidden;
+  }
+  .scaler{transform-origin:top center;}
+
+  /* 리플렛 캔버스 — 고정 794px (A4 210mm @96dpi) */
+  .leaflet{
+    width:794px;
+    background:linear-gradient(175deg,var(--blue-deep) 0%,var(--blue-main) 30%,var(--blue-mid) 58%,var(--cyan) 100%);
+    color:var(--white);
+    position:relative;overflow:hidden;
+    box-shadow:0 18px 60px rgba(0,0,0,.5);
+    display:flex;flex-direction:column;
+    border-radius:6px;
+  }
+
+  /* 필름 스프로킷 띠 */
+  .sprocket{
+    height:42px;background:var(--navy);
+    display:flex;align-items:center;justify-content:space-around;
+    flex-shrink:0;
+  }
+  .sprocket span{width:16px;height:16px;border-radius:50%;background:var(--white);}
+  .sprocket.bottom{margin-top:auto;}
+
+  .inner{padding:42px 50px 44px;position:relative;z-index:2;flex:1;display:flex;flex-direction:column;}
+
+  /* 배경 라인 일러스트 */
+  .bg-art{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.16;}
+  .bg-art svg{position:absolute;stroke:var(--white);fill:none;stroke-width:2;}
+
+  /* 헤더 */
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    border:1.5px solid rgba(255,255,255,.75);
+    border-radius:999px;padding:6px 16px;
+    font-size:14px;font-weight:600;letter-spacing:.02em;
+    align-self:flex-start;
+  }
+  .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  .eyebrow{margin-top:26px;color:var(--gold);font-weight:800;letter-spacing:.42em;font-size:15px;}
+  h1{margin-top:12px;font-size:41px;font-weight:900;line-height:1.18;letter-spacing:-.01em;}
+  h1 .with{display:block;font-size:21px;font-weight:800;color:rgba(255,255,255,.95);letter-spacing:0;margin-top:4px;}
+  .subtitle-band{
+    display:inline-block;margin-top:20px;align-self:flex-start;
+    background:var(--gold);color:var(--navy);
+    font-weight:800;font-size:18px;
+    padding:9px 23px;border-radius:2px;
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
+  }
+  .lead{margin-top:17px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.94);}
+
+  /* 개요 스트립 */
+  .overview{margin-top:23px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:11px;}
+  .ov-card{
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:11px;padding:12px 15px;
+    backdrop-filter:blur(2px);
+  }
+  .ov-card .label{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:5px;}
+  .ov-card .value{font-size:14.5px;font-weight:700;line-height:1.42;}
+  .ov-card .value small{display:block;font-weight:500;font-size:11.5px;color:rgba(255,255,255,.85);margin-top:3px;}
+
+  /* 시간계획 */
+  .sched-title{margin-top:27px;display:flex;align-items:baseline;gap:15px;}
+  .sched-title h2{font-size:20px;font-weight:900;letter-spacing:-.01em;}
+  .sched-title .en{color:var(--gold);font-weight:800;letter-spacing:.3em;font-size:12px;}
+
+  .day{
+    margin-top:15px;background:rgba(255,255,255,.96);color:var(--ink);
+    border-radius:11px;overflow:hidden;
+    box-shadow:0 6px 22px rgba(10,30,80,.18);
+  }
+  .day-head{
+    display:flex;align-items:center;gap:13px;
+    background:var(--navy);color:var(--white);
+    padding:9px 19px;
+  }
+  .day-head .d-num{color:var(--gold);font-weight:900;font-size:15.5px;letter-spacing:.05em;}
+  .day-head .d-date{font-weight:700;font-size:14.5px;}
+  .day table{width:100%;border-collapse:collapse;}
+  .day td{
+    padding:7px 19px;font-size:13px;vertical-align:top;
+    border-top:1px solid rgba(18,50,94,.10);
+  }
+  .day tr:first-child td{border-top:none;}
+  td.t{width:128px;font-weight:700;color:var(--blue-deep);font-variant-numeric:tabular-nums;white-space:nowrap;}
+  td.c{font-weight:600;}
+  td.p{width:150px;color:rgba(18,50,94,.62);font-size:11.5px;text-align:right;white-space:nowrap;}
+  tr.meal td{background:rgba(86,195,223,.10);}
+  tr.meal td.c{font-weight:500;color:rgba(18,50,94,.66);}
+  tr.hl td.c{color:var(--blue-deep);}
+  tr.hl td.c::after{
+    content:"실습";margin-left:8px;
+    background:var(--gold);color:var(--navy);
+    font-size:9.5px;font-weight:800;border-radius:999px;
+    padding:2px 8px;vertical-align:1px;
+  }
+
+  .notice{margin-top:16px;font-size:11.5px;color:rgba(255,255,255,.9);line-height:1.55;}
+  .notice strong{color:var(--gold);}
+
+  .footer{
+    margin-top:30px;padding-top:19px;padding-bottom:6px;
+    display:flex;justify-content:space-between;align-items:flex-end;
+    border-top:1px solid rgba(255,255,255,.4);
+  }
+  .footer .org{font-weight:800;font-size:13.5px;letter-spacing:.02em;}
+  .footer .org small{display:block;font-weight:500;font-size:11px;color:rgba(255,255,255,.85);margin-top:4px;}
+  .footer .date-big{text-align:right;font-weight:900;font-size:19px;letter-spacing:.01em;}
+  .footer .date-big em{font-style:normal;color:var(--gold);}
+  .footer .date-big small{display:block;font-weight:600;font-size:11.5px;color:rgba(255,255,255,.9);margin-top:3px;letter-spacing:.08em;}
+
+  @media print{
+    body{background:#fff;}
+    .stage{padding:0;}
+    .scaler{transform:none !important;height:auto !important;}
+    .leaflet{box-shadow:none;border-radius:0;width:210mm;}
+    @page{size:A4 portrait;margin:0;}
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="scaler" id="scaler">
+    <div class="leaflet" id="leaflet">
+      <div class="sprocket" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="bg-art" aria-hidden="true">
+        <svg style="top:128px;right:30px;width:196px;height:196px;" viewBox="0 0 120 120">
+          <rect x="30" y="14" width="60" height="52" rx="6"/>
+          <circle cx="60" cy="40" r="17"/><circle cx="60" cy="40" r="7"/>
+          <line x1="60" y1="66" x2="60" y2="100"/>
+          <line x1="60" y1="100" x2="38" y2="118"/><line x1="60" y1="100" x2="82" y2="118"/>
+        </svg>
+        <svg style="bottom:76px;right:23px;width:280px;height:212px;" viewBox="0 0 200 150">
+          <circle cx="70" cy="45" r="28"/><circle cx="70" cy="45" r="9"/>
+          <circle cx="135" cy="45" r="28"/><circle cx="135" cy="45" r="9"/>
+          <rect x="42" y="76" width="120" height="58" rx="8"/>
+          <polygon points="42,92 16,80 16,118 42,106"/>
+          <rect x="168" y="88" width="22" height="34" rx="4"/>
+        </svg>
+      </div>
+
+      <div class="inner">
+        <span class="badge">2026 강원 콘텐츠 제작기술 집중 실습과정</span>
+
+        <div class="eyebrow">SUMMER FILM WORKSHOP</div>
+        <h1>전문촬영 &amp; 조명기술 워크숍<span class="with">with 추경엽 촬영·조명 감독</span></h1>
+
+        <div class="subtitle-band">&ldquo; 썸머 필름을 타고 ! &rdquo;</div>
+
+        <p class="lead">한여름, 빛과 카메라로 떠나는 2박 3일.<br>영화 현장의 촬영·조명 기술을 직접 만나는 시간.</p>
+
+        <div class="overview">
+          <div class="ov-card">
+            <div class="label">DATE</div>
+            <div class="value">2026. 7. 17.(금) – 7. 19.(일)<small>2박 3일 집체형 교육</small></div>
+          </div>
+          <div class="ov-card">
+            <div class="label">PLACE</div>
+            <div class="value">강원대학교 서암관<small>디지털미디어센터(DMC) 일원</small></div>
+          </div>
+          <div class="ov-card">
+            <div class="label">PROGRAM</div>
+            <div class="value">촬영·조명 이론 + 팀별 실습<small>2개 조 구성 영상촬영 실습</small></div>
+          </div>
+        </div>
+
+        <div class="sched-title">
+          <h2>시간 계획</h2><span class="en">TIMETABLE</span>
+        </div>
+
+        <!-- DAY 1 -->
+        <div class="day">
+          <div class="day-head"><span class="d-num">DAY 1</span><span class="d-date">7. 17. 금요일</span></div>
+          <table>
+            <tr><td class="t">13:00 – 14:00</td><td class="c">참석자 등록</td><td class="p">로비</td></tr>
+            <tr><td class="t">14:00 – 17:00</td><td class="c">촬영 및 조명이론</td><td class="p">시사실</td></tr>
+            <tr class="meal"><td class="t">17:00 – 18:00</td><td class="c">석식</td><td class="p">관내식당</td></tr>
+            <tr class="hl"><td class="t">18:00 – 22:00</td><td class="c">조명장비 스터디</td><td class="p">VP 스튜디오</td></tr>
+          </table>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="day">
+          <div class="day-head"><span class="d-num">DAY 2</span><span class="d-date">7. 18. 토요일</span></div>
+          <table>
+            <tr><td class="t">09:00 – 12:00</td><td class="c">촬영이론</td><td class="p">시사실</td></tr>
+            <tr class="meal"><td class="t">12:00 – 13:00</td><td class="c">중식</td><td class="p">관내식당</td></tr>
+            <tr class="hl"><td class="t">13:00 – 18:00</td><td class="c">촬영이론 심화교육 및 실습</td><td class="p">시사실 / VP 스튜디오</td></tr>
+            <tr class="meal"><td class="t">18:00 – 19:00</td><td class="c">석식</td><td class="p">관내식당</td></tr>
+            <tr class="hl"><td class="t">19:00 – 22:00</td><td class="c">촬영실습 및 야간조명 교육</td><td class="p">서암관 일원</td></tr>
+          </table>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day">
+          <div class="day-head"><span class="d-num">DAY 3</span><span class="d-date">7. 19. 일요일</span></div>
+          <table>
+            <tr class="hl"><td class="t">09:00 – 12:00</td><td class="c">합성조명 실습 (크로마키)</td><td class="p">시사실 / VP 스튜디오</td></tr>
+            <tr class="meal"><td class="t">12:00 – 13:00</td><td class="c">중식</td><td class="p">관내식당</td></tr>
+            <tr><td class="t">13:00 – 14:00</td><td class="c">실습 결과물 기본 색보정</td><td class="p">IT 교육실</td></tr>
+            <tr><td class="t">14:00 – 16:00</td><td class="c">팀별 프로젝트 결과 피드백</td><td class="p">시사실</td></tr>
+          </table>
+        </div>
+
+        <p class="notice">※ 세부 일정은 현장 상황에 따라 변동될 수 있습니다.<br>
+        <strong>준비물</strong> — 개인 노트 및 필기구, 편한 복장</p>
+
+        <div class="footer">
+          <div class="org">강원영상위원회 · 강원문화재단<small>Gangwon Film Commission</small></div>
+          <div class="date-big">2026. 7. 17 <em>FRI</em> – 7. 19 <em>SUN</em><small>KANGWON NATIONAL UNIV. DMC</small></div>
+        </div>
+      </div>
+
+      <div class="sprocket bottom" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 모바일에서도 A4 리플렛 레이아웃을 그대로 축소하여 표시
+  (function(){
+    var BASE_W = 794; // 리플렛 고정 폭(px)
+    var scaler = document.getElementById('scaler');
+    var leaflet = document.getElementById('leaflet');
+
+    function fit(){
+      var pad = 16; // 좌우 최소 여백
+      var vw = Math.min(window.innerWidth, document.documentElement.clientWidth) - pad;
+      var scale = Math.min(1, vw / BASE_W);
+      scaler.style.transform = 'scale(' + scale + ')';
+      // 축소된 만큼 컨테이너 높이를 맞춰 아래 잘림/빈 공간 방지
+      scaler.style.height = (leaflet.offsetHeight * scale) + 'px';
+      scaler.style.width = BASE_W + 'px';
+    }
+
+    window.addEventListener('resize', fit);
+    window.addEventListener('orientationchange', fit);
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fit); }
+    window.addEventListener('load', fit);
+    fit();
+  })();
+</script>
+</body>
+</html>
